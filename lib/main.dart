@@ -117,10 +117,13 @@ class MyApp extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()
-              ),
+            runApp(
+              MaterialApp(
+                home: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 500),
+                  child: HomeScreen()
+                  ),
+              )
             );
           },
           child: Icon(Icons.arrow_forward),

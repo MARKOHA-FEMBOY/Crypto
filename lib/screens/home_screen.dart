@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,15 +5,24 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Text(
-            "Главный экран Crypto",
-            style: TextStyle(fontSize: 24),
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+        child: Stack(
+          children: [
+
+            ],
           ),
         ),
-      ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+            NavigationDestination(icon: Icon(Icons.folder_zip), label: "Encrypt"),
+            NavigationDestination(icon: Icon(Icons.topic), label: "Decrypt"),
+            NavigationDestination(icon: Icon(Icons.settings), label: "Settings")
+          ],
+        ),
+      )
     );
   }
 }
